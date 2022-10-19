@@ -3,7 +3,7 @@ import React from 'react'
 const NabPage = () => {
   return (
     <React.Fragment>
-        <section>
+        <section >
         <h1>hello</h1>
         </section>
      

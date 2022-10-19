@@ -1,38 +1,36 @@
 import React from 'react'
 import { Col, Row,Nav, Navbar } from 'react-bootstrap'
 import CustomNavbar from './CustomNavbar'
+import Sidebar from './Sidebar'
 
 
 const MainPage = () => {
   return (
     <React.Fragment>
-        {/* heading-section */}
-        <CustomNavbar/>
-       
-        {/* navbar-section */}
-        <section>
-          <Row>
-            <Col xs={2} >
-        <div className='bg-dark'>
-          <h1 className='text-primary'>ajhjah</h1>
-          <h1 className='text-primary'>ajhjah</h1>
-          <h1 className='text-primary'>ajhjah</h1>
-          <h1 className='text-primary'>ajhjah</h1>
-          <h1 className='text-primary'>ajhjah</h1>
-          <h1 className='text-primary'>ajhjah</h1>
-          <h1 className='text-primary'>ajhjah</h1>
-          <h1 className='text-primary'>ajhjah</h1>
-          <h1 className='text-primary'>ajhjah</h1>
-          <h1 className='text-primary'>ajhjah</h1>
-          <h1 className='text-primary'>ajhjah</h1>
-          <h1 className='text-primary'>ajhjah</h1>
 
-        </div>
+   <Row>
 
-             </Col>
-            <Col xs={10}>MainSection</Col>
-          </Row>
-        </section>
+   <Col lg={2} className="px-0">
+    <Sidebar/>
+    </Col>
+    <Col lg={10} className="px-0">
+
+      <CustomNavbar/>
+    </Col>
+
+   
+
+
+
+
+
+   </Row>
+
+      
+
+    
+
+           
    
     </React.Fragment>
   )
