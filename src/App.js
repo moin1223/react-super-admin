@@ -1,69 +1,33 @@
-import React from 'react'
-import LoginForm from './componenrs/form/loginform/LoginForm'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CustomTable from './componenrs/CustomTable';
-import { BiShow} from 'react-icons/bi';
-import { BiEdit} from 'react-icons/bi';
-import { MdDeleteOutline } from 'react-icons/md';
-import { Table } from 'react-bootstrap';
+import { useState } from "react";
+import { useEffect } from  "react";
+import  secureLocalStorage  from  "react-secure-storage";
 
+  
 const App = () => {
- const buttons = 
- [
-  {
-    key:'show',
-    path:'/',
-    icon:<BiShow />,
-    className:'btn btn-sm btn-info',
-  
-   },
- {
-key:'edit',
-path:'/',
-icon:<BiEdit />,
-className:'btn btn-sm btn-info'
+   const [value, setValue] = useState()
+   console.log(value)
+    useEffect(() => {
+	    secureLocalStorage.setItem("object", {
+		    message:  "This is testing of local storage",
+	    });
+	    secureLocalStorage.setItem("number", 12);
+	    secureLocalStorage.setItem("string", "12");
+	    secureLocalStorage.setItem("boolean", true);
+	    let value = secureLocalStorage.getItem("boolean");
+      console.log(value)
+      setValue(value);
+	}, []);
 
- },
- {
-  key:'delete',
-  type:'submit',
-  icon:<MdDeleteOutline />,
-  className:'btn btn-sm btn-info',
- }
 
- ]
 
-  
-  return (
-<>
+   return (
+	    <>
+      {
+        value?<div>you are admin</div> : <div>Yue are user</div>
 
-      <Table responsive="sm">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Table heading</th>
-            <th>Table heading</th>
-            <th>Table heading</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>
-            <a>azb</a>
-            <a>azb</a>
-            <a>azb</a>
-            </td>
-            </tr>
-
-            </tbody>
-      </Table>
-
-</>
-  )
+      }
+      </>
+	);
 }
 
-export default App
+export  default  App;
